@@ -4,7 +4,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   @ViewChild('container', { static: false }) container: ElementRef;
@@ -12,44 +12,44 @@ export class AppComponent implements OnInit {
   data: any = [
     {
       id: 'one',
-      content: '5 Days 6 Nights in Maui'
+      content: '5 Days 6 Nights in Maui',
     },
     {
       id: 'two',
-      content: "<span class='noBold'>with</span> FREE AIR"
+      content: "<span class='noBold'>with</span> FREE AIR",
     },
     {
       id: 'three',
-      content: ''
+      content: '',
     },
     {
       id: 'four',
-      content: ''
+      content: '',
     },
     {
       id: 'five',
-      content: 'Expires DEC 31, 2021'
+      content: 'Expires DEC 31, 2021',
     },
     {
       id: 'six',
-      content: "<span id='daysLeft'></span> <span id='plural'></span>"
+      content: "<span id='daysLeft'></span> <span id='plural'></span>",
     },
     {
       id: 'seven',
-      content: '— Reserve Today —'
+      content: '— Reserve Today —',
     },
     {
       id: 'eight',
-      content: 'Easily Change Banner<br>with JSON!'
+      content: 'Easily Change Banner<br>with JSON!',
     },
     {
       id: 'nine',
-      content: 'LEARN MORE'
+      content: 'LEARN MORE',
     },
     {
       id: 'ten',
-      content: '<p>Maui Vacation<br>Package</p>'
-    }
+      content: '<p>Maui Vacation<br>Package</p>',
+    },
   ];
   daysDiff: number;
   timeDiff: number;

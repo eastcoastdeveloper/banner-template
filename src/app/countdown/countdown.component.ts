@@ -1,15 +1,11 @@
-  import {
-  AfterViewInit,
-  Component
-} from "@angular/core";
+import { AfterViewInit, Component } from '@angular/core';
 
 @Component({
-  selector: "countdown",
-  templateUrl: "./countdown.component.html",
-  styleUrls: ["./countdown.component.scss"]
+  selector: 'countdown',
+  templateUrl: './countdown.component.html',
+  styleUrls: ['./countdown.component.scss'],
 })
 export class CountdownComponent implements AfterViewInit {
-
   currentDate: any;
   targetDate: any;
   cDateMillisecs: any;
@@ -21,7 +17,7 @@ export class CountdownComponent implements AfterViewInit {
   days: any;
 
   ngAfterViewInit() {
-    this.myTimer()
+    this.myTimer();
   }
 
   myTimer() {
@@ -38,16 +34,15 @@ export class CountdownComponent implements AfterViewInit {
     this.hours %= 24;
     this.minutes %= 60;
     this.seconds %= 60;
-    this.hours = this.hours < 10 ? "0" + this.hours : this.hours;
-    this.minutes = this.minutes < 10 ? "0" + this.minutes : this.minutes;
-    this.seconds = this.seconds < 10 ? "0" + this.seconds : this.seconds;
+    this.hours = this.hours < 10 ? '0' + this.hours : this.hours;
+    this.minutes = this.minutes < 10 ? '0' + this.minutes : this.minutes;
+    this.seconds = this.seconds < 10 ? '0' + this.seconds : this.seconds;
 
-    document.getElementById("days").innerText = this.days;
-    document.getElementById("hours").innerText = this.hours;
-    document.getElementById("mins").innerText = this.minutes;
-    document.getElementById("seconds").innerText = this.seconds;
+    document.getElementById('days').innerText = this.days;
+    document.getElementById('hours').innerText = this.hours;
+    document.getElementById('mins').innerText = this.minutes;
+    document.getElementById('seconds').innerText = this.seconds;
 
     setInterval(this.myTimer, 1000);
   }
-    
 }

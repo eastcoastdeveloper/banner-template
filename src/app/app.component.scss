@@ -79,7 +79,6 @@
 }
 
 @-webkit-keyframes fadeInOut {
-
   0%,
   100% {
     opacity: 0;
@@ -92,7 +91,6 @@
 }
 
 @keyframes fadeInOut {
-
   0%,
   100% {
     opacity: 0;
@@ -111,14 +109,14 @@
 
 .noBold {
   font-weight: 300;
-  letter-spacing: -.5pt;
+  letter-spacing: -0.5pt;
   text-transform: uppercase;
   font-size: 12pt;
   vertical-align: 1px;
 }
 
 #bannerWrapper {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   width: 300px;
   height: 598px;
   border: 1px solid black;
@@ -128,13 +126,13 @@
   overflow: hidden;
 }
 
-#bannerWrapper:hover>#nine {
+#bannerWrapper:hover > #nine {
   background-color: white;
   color: #ce1141;
   font-style: italic;
 }
 
-#bannerWrapper:hover>.container {
+#bannerWrapper:hover > .container {
   background-color: #6c6c6c;
 }
 
@@ -223,19 +221,19 @@
   right: 0;
 }
 
-::ng-deep #one{
+::ng-deep #one {
   font-size: 17pt;
-  letter-spacing: -.5pt;
+  letter-spacing: -0.5pt;
   font-weight: 600;
   top: 10px;
-  text-transform: uppercase
+  text-transform: uppercase;
 }
 ::ng-deep #ten {
   font-size: 17pt;
-  letter-spacing: -.5pt;
+  letter-spacing: -0.5pt;
   font-weight: 600;
   top: 10px;
-  margin: 0;;
+  margin: 0;
   text-transform: uppercase;
   p {
     margin: 0;
@@ -279,7 +277,7 @@
 
 ::ng-deep #eight {
   font-size: 16pt;
-  letter-spacing: -.5pt;
+  letter-spacing: -0.5pt;
   top: 6px;
   line-height: 33px;
 }
@@ -347,14 +345,14 @@
 }
 
 .imgTwo {
-  -webkit-animation: moveImg .5s ease-out 4s forwards;
-  animation: moveImg .5s ease-out 4s forwards;
+  -webkit-animation: moveImg 0.5s ease-out 4s forwards;
+  animation: moveImg 0.5s ease-out 4s forwards;
 }
 
 /* SCENE 3 */
 .imgThree {
-  -webkit-animation: moveImg .5s ease-out 8s forwards;
-  animation: moveImg .5s ease-out 8s forwards;
+  -webkit-animation: moveImg 0.5s ease-out 8s forwards;
+  animation: moveImg 0.5s ease-out 8s forwards;
 }
 
 ::ng-deep #eight {
@@ -364,7 +362,7 @@
 
 /* SCENE 4 */
 ::ng-deep #nine,
-::ng-deep #ten{
+::ng-deep #ten {
   -webkit-animation: fadeIn 0.5s ease-out 12.5s forwards;
   animation: fadeIn 0.5s ease-out 12.5s forwards;
 }
@@ -375,8 +373,8 @@
 }
 
 .imgFour {
-  -webkit-animation: moveImg .5s ease-out 12s forwards;
-  animation: moveImg .5s ease-out 12s forwards;
+  -webkit-animation: moveImg 0.5s ease-out 12s forwards;
+  animation: moveImg 0.5s ease-out 12s forwards;
 }
 
 .count-down-timer {
