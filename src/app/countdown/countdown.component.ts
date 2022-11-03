@@ -22,7 +22,7 @@ export class CountdownComponent implements AfterViewInit {
 
   myTimer() {
     this.currentDate = new Date();
-    this.targetDate = new Date(2023, 11, 31);
+    this.targetDate = new Date(2022, 12, 1);
     this.cDateMillisecs = this.currentDate.getTime();
     this.tDateMillisecs = this.targetDate.getTime();
     this.difference = this.tDateMillisecs - this.cDateMillisecs;
