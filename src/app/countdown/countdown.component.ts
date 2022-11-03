@@ -1,48 +1,63 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'countdown',
   templateUrl: './countdown.component.html',
   styleUrls: ['./countdown.component.scss'],
 })
-export class CountdownComponent implements AfterViewInit {
-  currentDate: any;
-  targetDate: any;
-  cDateMillisecs: any;
-  tDateMillisecs: any;
-  difference: any;
-  seconds: any;
-  minutes: any;
-  hours: any;
-  days: any;
+export class CountdownComponent {
+
+  date: any;
+  windowWidth: number;
+  now: any;
+  targetDate: any = new Date(2022, 12, 1);
+  targetTime: any = this.targetDate.getTime();
+
+  difference: number;
+  months: Array<string> = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  currentTime: any =
+    this.months[this.targetDate.getMonth()] +
+    " " +
+    this.targetDate.getDate() +
+    ", " +
+    this.targetDate.getFullYear();
+
+  @ViewChild("days", { static: true }) days: ElementRef;
+  @ViewChild("hours", { static: true }) hours: ElementRef;
+  @ViewChild("minutes", { static: true }) minutes: ElementRef;
+  @ViewChild("seconds", { static: true }) seconds: ElementRef;
+
 
   ngAfterViewInit() {
-    this.myTimer();
+    setInterval(() => {
+      this.tickTock();
+      this.difference = this.targetTime - this.now;
+      this.difference = this.difference / (1000 * 60 * 60 * 24);
+      !isNaN(this.days.nativeElement.innerText)
+        ? (this.days.nativeElement.innerText = Math.floor(this.difference))
+        : (this.days.nativeElement.innerHTML = `<img src="https://i.gifer.com/VAyR.gif" />`);
+    }, 1000);
   }
 
-  myTimer() {
-    this.currentDate = new Date();
-    this.targetDate = new Date(2022, 12, 1);
-    this.cDateMillisecs = this.currentDate.getTime();
-    this.tDateMillisecs = this.targetDate.getTime();
-    this.difference = this.tDateMillisecs - this.cDateMillisecs;
-    this.seconds = Math.floor(this.difference / 1000);
-    this.minutes = Math.floor(this.seconds / 60);
-    this.hours = Math.floor(this.minutes / 60);
-    this.days = Math.floor(this.hours / 24);
-
-    this.hours %= 24;
-    this.minutes %= 60;
-    this.seconds %= 60;
-    this.hours = this.hours < 10 ? '0' + this.hours : this.hours;
-    this.minutes = this.minutes < 10 ? '0' + this.minutes : this.minutes;
-    this.seconds = this.seconds < 10 ? '0' + this.seconds : this.seconds;
-
-    document.getElementById('days').innerText = this.days;
-    document.getElementById('hours').innerText = this.hours;
-    document.getElementById('mins').innerText = this.minutes;
-    document.getElementById('seconds').innerText = this.seconds;
-
-    setInterval(this.myTimer, 1000);
+  tickTock() {
+    this.date = new Date();
+    this.days.nativeElement.innerText = Math.floor(this.difference);
+    this.now = this.date.getTime();
+    this.hours.nativeElement.innerText = 23 - this.date.getHours();
+    this.minutes.nativeElement.innerText = 60 - this.date.getMinutes();
+    this.seconds.nativeElement.innerText = 60 - this.date.getSeconds();
   }
 }
