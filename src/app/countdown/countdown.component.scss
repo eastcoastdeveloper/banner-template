@@ -7,6 +7,17 @@
       width: 25%;
       margin: 10px 0 0 0;
       text-align: center;
+      position: relative;
+
+      ::ng-deep img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        display: block;
+        height: 30px;
+      }
     }
   }
   .times {
