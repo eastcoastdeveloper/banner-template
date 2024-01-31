@@ -6,40 +6,38 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./countdown.component.scss'],
 })
 export class CountdownComponent {
-
   date: any;
   windowWidth: number;
   now: any;
-  targetDate: any = new Date(2023, 12, 1);
+  targetDate: any = new Date(2024, 12, 1);
   targetTime: any = this.targetDate.getTime();
 
   difference: number;
   months: Array<string> = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
   ];
   currentTime: any =
     this.months[this.targetDate.getMonth()] +
-    " " +
+    ' ' +
     this.targetDate.getDate() +
-    ", " +
+    ', ' +
     this.targetDate.getFullYear();
 
-  @ViewChild("days", { static: true }) days: ElementRef;
-  @ViewChild("hours", { static: true }) hours: ElementRef;
-  @ViewChild("minutes", { static: true }) minutes: ElementRef;
-  @ViewChild("seconds", { static: true }) seconds: ElementRef;
-
+  @ViewChild('days', { static: true }) days: ElementRef;
+  @ViewChild('hours', { static: true }) hours: ElementRef;
+  @ViewChild('minutes', { static: true }) minutes: ElementRef;
+  @ViewChild('seconds', { static: true }) seconds: ElementRef;
 
   ngAfterViewInit() {
     setInterval(() => {
