@@ -9,7 +9,7 @@ export class CountdownComponent {
   date: any;
   windowWidth: number;
   now: any;
-  targetDate: any = new Date(2024, 12, 1);
+  targetDate: any = new Date(2026, 11, 31);
   targetTime: any = this.targetDate.getTime();
 
   difference: number;

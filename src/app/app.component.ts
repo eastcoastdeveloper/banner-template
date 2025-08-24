@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
     },
     {
       id: 'five',
-      content: 'Expires DEC 31, 2024',
+      content: 'Expires DEC 31, 2025',
     },
     {
       id: 'six',
