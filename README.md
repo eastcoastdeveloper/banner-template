@@ -1,3 +1,3 @@
-# banner-template
+# Angular Banner Ad w/ Countdown Timer
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/banner-template)
+ng serve from package.json
